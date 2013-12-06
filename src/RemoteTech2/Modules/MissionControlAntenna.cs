@@ -7,7 +7,7 @@ namespace RemoteTech
     {
         [Persistent] public float Omni = 75000000;
 
-        float IAntenna.Omni { get { return Omni; } }
+        float IAntenna.Omni { get { return Omni * RTSettings.Instance.RangeMultiplier; } }
         Guid IAntenna.Guid { get { return MissionControlSatellite.Guid; } }
         String IAntenna.Name { get { return "Dummy Antenna"; } }
         bool IAntenna.Powered { get { return true; } }
